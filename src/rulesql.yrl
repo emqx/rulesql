@@ -369,7 +369,7 @@ trans_list_ref({cons, Head, Tail}) ->
 %%                                  PARSER
 %%-----------------------------------------------------------------------------
 -spec parsetree(binary()|list()) ->
-    {parse_error, term()} | {lex_error, term()} | {ok, [tuple()]}.
+    {parse_error, term()} | {lex_error, term()} | {ok, {select | foreach, [tuple()]}}.
 parsetree(Sql) ->
     ?D("Start~n Sql: ~p~n", [Sql]),
     case parsetree_with_tokens(Sql) of
